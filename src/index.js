@@ -39,9 +39,21 @@ function displayTemperature(response) {
   document.querySelector("#date-time").innerHTML = formatDate(
     response.data.dt * 1000
   );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "alt",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
+    );
 }
 
-let city = "brisbane";
+let city = "Adelaide";
 let units = "metric";
 let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;

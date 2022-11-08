@@ -99,11 +99,12 @@ li.time-location {
 }
 
 img {
-  margin: 0 20px;
+  margin-bottom: 65px;
 }
 h2 {
+  font-family: "Open Sans", sans-serif;
   color: #596aca;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
   margin-left: 10px;
 }
