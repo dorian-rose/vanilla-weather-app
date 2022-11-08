@@ -90,10 +90,12 @@ li.time-location {
   font-size: 15px;
   color: #5a6275;
   line-height: 20px;
+  text-transform: capitalize;
 }
 #location {
   font-size: 20px;
 }
+
 img {
   margin: 0 30px 40px 0;
 }
