@@ -9,15 +9,7 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
@@ -52,9 +44,20 @@ function displayTemperature(response) {
       `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
     );
 }
+function searchCity(city) {
+  let units = "metric";
+  let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-let city = "Adelaide";
-let units = "metric";
-let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-city").value;
+  searchCity(cityInputElement);
+}
+
+let searchCityForm = document.querySelector("#search-city-form");
+searchCityForm.addEventListener("submit", handleSubmit);
+
+searchCity("Adelaide");
