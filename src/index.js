@@ -15,9 +15,8 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celciusTemperature = Math.round(response.data.main.temp);
+  document.querySelector("#current-temperature").innerHTML = celciusTemperature;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
@@ -57,7 +56,32 @@ function handleSubmit(event) {
   searchCity(cityInputElement);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = Math.round((celciusTemperature * 9) / 5 + 32);
+  document.querySelector("#current-temperature").innerHTML =
+    fahrenheitTemperature;
+}
+
+function displayCelciusTemperature(event) {
+  event.preventDefault();
+
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+  document.querySelector("#current-temperature").innerHTML = celciusTemperature;
+}
+
+let celciusTemperature = null;
+
 let searchCityForm = document.querySelector("#search-city-form");
 searchCityForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#unit-fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celciusLink = document.querySelector("#unit-celcius");
+celciusLink.addEventListener("click", displayCelciusTemperature);
 
 searchCity("Adelaide");

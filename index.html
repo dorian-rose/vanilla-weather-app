@@ -38,7 +38,11 @@
           <div class="row">
             <div class="col-6">
               <span id="current-temperature"></span>
-              <span class="temperature-unit"> °C|F </span>
+              <span class="unit-link-container">
+                <a href="#" id="unit-celcius" class="active">°C</a> |
+                <a href="#" id="unit-fahrenheit">°F</a>
+                <span class="spacing">...</span>
+              </span>
 
               <ul class="weather-components">
                 <li class="weather-components">
@@ -100,7 +104,9 @@
           </div>
         </div>
         <p class="open-source-comment">
-          <a href="https://github.com/dorian-rose/vanilla-weather-app"
+          <a
+            href="https://github.com/dorian-rose/vanilla-weather-app"
+            target="_blank"
             >Open-source code
           </a>
           by Dorian Kelly

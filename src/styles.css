@@ -3,12 +3,12 @@ body {
 }
 
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 700px;
   margin: 30px auto;
 }
 
 .weather-app {
-  max-width: 600px;
+  max-width: 700px;
   margin: 30px auto;
   padding: 20px;
   border: 1px solid cadetblue;
@@ -62,11 +62,19 @@ body {
   font-size: 75px;
   color: #5a6275;
 }
-.temperature-unit {
+.unit-link-container {
   position: relative;
   bottom: 38px;
-  color: #5a6275;
 }
+.unit-link-container .active {
+  color: #5a6275;
+  cursor: default;
+  text-decoration: none;
+}
+.spacing {
+  color: transparent;
+}
+
 ul.weather-components {
   display: inline-block;
   position: relative;
