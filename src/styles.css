@@ -65,17 +65,10 @@ body {
   font-size: 75px;
   color: #5a6275;
 }
-.unit-link-container {
+.unit {
   position: relative;
   bottom: 38px;
-}
-.unit-link-container .active {
   color: #5a6275;
-  cursor: default;
-  text-decoration: none;
-}
-.spacing {
-  color: transparent;
 }
 
 ul.weather-components {
@@ -114,20 +107,21 @@ li.time-location {
 }
 
 .weekly-forecast {
-  margin: 30px 20px 20px 10px;
+  margin: 0 20px 20px 10px;
   text-align: center;
 }
 .forecast-day {
-  font-size: 20px;
+  font-size: 18px;
   color: #5a6275;
 }
-.forecast-temperature {
-  font-size: 18;
+.forecast-temperature-max {
+  font-size: 14px;
   color: #5a6275;
 }
 
 .forecast-temperature-min {
   color: #a3a3a3;
+  font-size: 14px;
 }
 .open-source-comment {
   font-size: 12px;

@@ -28,7 +28,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 7) {
       forecastHTML =
         forecastHTML +
         ` <div class="col">
@@ -45,10 +45,10 @@ function displayForecast(response) {
                 <div class="forecast-temperature">
                   <span class="forecast-temperature-max">${Math.round(
                     forecastDay.temp.max
-                  )}</span>
+                  )}°</span>
                   <span class="forecast-temperature-min">${Math.round(
                     forecastDay.temp.min
-                  )}</span>
+                  )}°</span>
                 </div>
               </div>
             `;
@@ -110,32 +110,7 @@ function handleSubmit(event) {
   searchCity(cityInputElement);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = Math.round((celciusTemperature * 9) / 5 + 32);
-  document.querySelector("#current-temperature").innerHTML =
-    fahrenheitTemperature;
-}
-
-function displayCelciusTemperature(event) {
-  event.preventDefault();
-
-  fahrenheitLink.classList.remove("active");
-  celciusLink.classList.add("active");
-  document.querySelector("#current-temperature").innerHTML = celciusTemperature;
-}
-
-let celciusTemperature = null;
-
 let searchCityForm = document.querySelector("#search-city-form");
 searchCityForm.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#unit-fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celciusLink = document.querySelector("#unit-celcius");
-celciusLink.addEventListener("click", displayCelciusTemperature);
 
 searchCity("Adelaide");
