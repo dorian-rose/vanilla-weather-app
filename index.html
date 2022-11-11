@@ -58,7 +58,7 @@
             </div>
 
             <div class="col-6">
-              <img src="" alt="" id="icon" />
+              <img class="current-weather-image" src="" alt="" id="icon" />
               <ul class="time-location">
                 <li class="time-location" id="location"></li>
 
@@ -69,37 +69,21 @@
               </ul>
             </div>
           </div>
-          <h2>Weekly Forecast</h2>
-          <div class="grid-forecast">
+
+          <div class="weekly-forecast">
             <div class="row" class="forecast-days">
-              <div class="col">Fri</div>
-              <div class="col">Sat</div>
-              <div class="col">Sun</div>
-              <div class="col">Mon</div>
-              <div class="col">Tues</div>
-              <div class="col">Wed</div>
-              <div class="col">Thurs</div>
-              <div class="col">Fri</div>
-            </div>
-            <div class="row" class="forecast-icons">
-              <div class="col">☀️</div>
-              <div class="col">🌤</div>
-              <div class="col">🌥</div>
-              <div class="col">🌦</div>
-              <div class="col">🌧</div>
-              <div class="col">🌨</div>
-              <div class="col">🌩</div>
-              <div class="col">🌤</div>
-            </div>
-            <div class="row" class="daily-forecast">
-              <div class="col">18°</div>
-              <div class="col">20°</div>
-              <div class="col">24°</div>
-              <div class="col">14°</div>
-              <div class="col">13°</div>
-              <div class="col">15°</div>
-              <div class="col">16°</div>
-              <div class="col">17°</div>
+              <div class="col">
+                <div class="forecast-day">Fri</div>
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt="weather"
+                  width="36"
+                />
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">24</span>
+                  <span class="forecast-temperature-min">12</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

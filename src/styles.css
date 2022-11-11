@@ -30,6 +30,9 @@ body {
   text-decoration: underline;
 }
 
+.city-search-container {
+  margin-bottom: 20px;
+}
 #search-city-form {
   display: inline;
 }
@@ -89,7 +92,7 @@ li.weather-components {
 }
 ul.time-location {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 30px;
   padding: 0;
 }
 li.time-location {
@@ -106,21 +109,25 @@ li.time-location {
   text-transform: capitalize;
 }
 
-img {
-  margin-bottom: 65px;
-}
-h2 {
-  font-family: "Open Sans", sans-serif;
-  color: #596aca;
-  font-weight: 400;
-  font-size: 20px;
-  margin-left: 10px;
+.current-weather-image {
+  margin-bottom: 45px;
 }
 
-.grid-forecast {
-  margin: 20px 20px 20px 10px;
-  font-size: 18px;
+.weekly-forecast {
+  margin: 30px 20px 20px 10px;
+  text-align: center;
+}
+.forecast-day {
+  font-size: 20px;
   color: #5a6275;
+}
+.forecast-temperature {
+  font-size: 18;
+  color: #5a6275;
+}
+
+.forecast-temperature-min {
+  color: #a3a3a3;
 }
 .open-source-comment {
   font-size: 12px;
