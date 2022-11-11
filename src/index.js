@@ -13,6 +13,33 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tues", "Wed", "Thurs"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col">
+                <div class="forecast-day">${day}</div>
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt="weather"
+                  width="36"
+                />
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">24</span>
+                  <span class="forecast-temperature-min">12</span>
+                </div>
+              </div>
+            `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function displayTemperature(response) {
   celciusTemperature = Math.round(response.data.main.temp);
@@ -85,3 +112,4 @@ let celciusLink = document.querySelector("#unit-celcius");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
 searchCity("Adelaide");
+displayForecast();
