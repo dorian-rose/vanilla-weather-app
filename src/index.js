@@ -97,6 +97,17 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 }
 
+function searchLocation(position) {
+  let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getCurrentLocation(event) {
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
 function searchCity(city) {
   let units = "metric";
   let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
@@ -110,7 +121,37 @@ function handleSubmit(event) {
   searchCity(cityInputElement);
 }
 
+function sendCityMelbourne(event) {
+  searchCity("melbourne");
+}
+function sendCityAdelaide(event) {
+  searchCity("adelaide");
+}
+
+function sendCitySydney(event) {
+  searchCity("sydney");
+}
+
+function sendCityBrisbane(event) {
+  searchCity("brisbane");
+}
+
+let currentCityButton = document.querySelector("#current-city-button");
+currentCityButton.addEventListener("click", getCurrentLocation);
+
 let searchCityForm = document.querySelector("#search-city-form");
 searchCityForm.addEventListener("submit", handleSubmit);
+
+let melbourneButton = document.querySelector("#melbourne");
+melbourneButton.addEventListener("click", sendCityMelbourne);
+
+let adelaideButton = document.querySelector("#adelaide");
+adelaideButton.addEventListener("click", sendCityAdelaide);
+
+let sydneyButton = document.querySelector("#sydney");
+sydneyButton.addEventListener("click", sendCitySydney);
+
+let brisbaneButton = document.querySelector("#brisbane");
+brisbaneButton.addEventListener("click", sendCityBrisbane);
 
 searchCity("Adelaide");
